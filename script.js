@@ -82,6 +82,20 @@ lines = [
 ];
 }
 
+if(type.includes("Free Fire")){
+lines = [
+"> Initializing FPS Engine...",
+"> Unlocking GPU threads...",
+"> Clearing background apps...",
+"> Boosting render pipeline...",
+"> Scanning CPU usage...",
+"> Cleaning RAM cache...",
+"> Optimizing GPU load...",
+"> Applying performance profile...",
+"> ON OPTIMIZER ✅"
+];
+}
+
 if(type.includes("OPTIMIZER")){
 lines = [
 "> Scanning CPU usage...",
