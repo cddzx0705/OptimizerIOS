@@ -1,374 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SYSTEM IOS</title>
-
-  <style>
-    /* CONTACT */
-
-.contact{
-margin-top:25px;
-}
-
-.contact h3{
-margin-bottom:10px;
-}
-
-.social{
-display:flex;
-justify-content:center;
-gap:20px;
-}
-
-.social img{
-width:40px;
-cursor:pointer;
-transition:.2s;
-}
-
-.social img:hover{
-transform:scale(1.2);
-}
-
-.footer{
-margin-top:10px;
-font-size:13px;
-opacity:.5;
-}
-.switch{
-width:52px;
-height:30px;
-background:#444;
-border-radius:50px;
-position:relative;
-cursor:pointer;
-transition:.3s;
-}
-
-.switch::after{
-content:"";
-width:26px;
-height:26px;
-background:white;
-border-radius:50%;
-position:absolute;
-top:2px;
-left:2px;
-transition:.3s cubic-bezier(.4,0,.2,1);
-box-shadow:0 2px 6px rgba(0,0,0,.4);
-}
-
-.switch.active{
-box-shadow:0 0 10px #00eaff;
-background:#34c759;
-}
-body{
-animation:iosOpen .6s ease;
-}
-
-@keyframes iosOpen{
-from{
-filter:blur(20px);
-opacity:0;
-transform:scale(1.05);
-}
-to{
-filter:blur(0);
-opacity:1;
-transform:scale(1);
-}
-}
-.switch.active::after{
-left:24px;
-}
-.loadingBlur{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-backdrop-filter:blur(12px);
-background:rgba(0,0,0,.4);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-.logo{
-font-family:"SF Pro Display",-apple-system,system-ui;
-font-weight:700;
-letter-spacing:1.2px;
-font-size:22px;
-background:linear-gradient(90deg,#4DA3FF,#A855F7,#00F0FF);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:0 0 15px rgba(77,163,255,.5);
-}
-.item{
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(20,22,30,.6);
-backdrop-filter:blur(12px);
-padding:15px;
-margin-bottom:12px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,.05);
-}
-.iosLoader{
-width:40px;
-height:40px;
-border:4px solid #333;
-border-top:4px solid #00eaff;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-.toast{
-position:fixed;
-top:45%;
-left:50%;
-transform:translate(-50%,-50%);
-background:#2c9cff;
-padding:15px 25px;
-border-radius:12px;
-font-size:15px;
-font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,sans-serif;
-letter-spacing:.3px;
-animation:fadeToast 2s forwards;
-}
-.app-name{
-font-size:26px;
-margin-top:10px;
-font-weight:700;
-letter-spacing:3px;
-background:linear-gradient(90deg,#00eaff,#4facfe,#00eaff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:0 0 15px rgba(0,234,255,.5);
-animation:glowText 3s linear infinite;
-}
-
-@keyframes glowText{
-0%{filter:hue-rotate(0deg)}
-100%{filter:hue-rotate(360deg)}
-}
-/* ===== CODE TERMINAL ===== */
-.codeBox{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:85%;
-max-width:420px;
-background:rgba(0,0,0,.85);
-backdrop-filter:blur(20px);
-border-radius:16px;
-padding:14px;
-font-size:13px;
-font-family:monospace;
-color:#00eaff;
-box-shadow:0 0 40px #00eaff55;
-display:none;
-z-index:9999;
-animation:fadeCenter .35s ease;
-}
-
-
-.codeHeader{
-font-weight:bold;
-margin-bottom:6px;
-opacity:.7;
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translate(-50%,20px)}
-to{opacity:1;transform:translate(-50%,0)}
-}
-
-.app-logo{
-width:85px;
-height:85px;
-border-radius:24px;
-display:block;
-margin:auto;
-margin-bottom:14px;
-box-shadow:
-0 10px 30px rgba(0,0,0,.6),
-0 0 30px rgba(0,234,255,.35);
-animation:logoFloat 3s ease-in-out infinite;
-}
-
-@keyframes logoFloat{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-8px)}
-}
-
-.app-icon{
-width:75px;
-height:75px;
-border-radius:24px;
-margin:auto;
-display:block;
-box-shadow:
-0 10px 30px rgba(0,0,0,.6),
-0 0 25px rgba(0,234,255,.35);
-animation:appPop .5s ease;
-}
-
-@keyframes appPop{
-from{
-transform:scale(.6);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
-}
-
-@keyframes logoFloat{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-}
-@keyframes fadeToast{
-0%{opacity:0}
-10%{opacity:1}
-90%{opacity:1}
-100%{opacity:0}
-}
-.iosBlur{
-position:fixed;
-inset:0;
-backdrop-filter:blur(20px);
-background:rgba(0,0,0,.3);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-transition:.4s;
-}
-.title{
-font-family:"SF Pro Display",-apple-system,system-ui;
-font-weight:700;
-letter-spacing:1.2px;
-font-size:22px;
-background:linear-gradient(90deg,#4DA3FF,#A855F7,#00F0FF);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:0 0 15px rgba(77,163,255,.5);
-}
-.toggle{
-appearance:none;
-width:50px;
-height:28px;
-background:#444;
-border-radius:20px;
-position:relative;
-transition:.3s;
-cursor:pointer;
-}
-
-.toggle:checked{
-background:#00eaff;
-}
-
-.toggle::before{
-content:"";
-position:absolute;
-width:24px;
-height:24px;
-background:white;
-border-radius:50%;
-top:2px;
-left:2px;
-transition:.3s;
-}
-
-.toggle:checked::before{
-transform:translateX(22px);
-}
-.toggle{
-appearance:none;
-width:50px;
-height:28px;
-background:#444;
-border-radius:20px;
-position:relative;
-transition:.3s;
-cursor:pointer;
-}
-
-.toggle:checked{
-background:#00eaff;
-}
-
-.toggle::before{
-content:"";
-position:absolute;
-width:24px;
-height:24px;
-background:white;
-border-radius:50%;
-top:2px;
-left:2px;
-transition:.3s;
-}
-
-.toggle:checked::before{
-transform:translateX(22px);
-}
-.status-bar{
-color:#00FFB3;
-font-weight:600;
-text-shadow:0 0 10px #00FFB3;
-}
-
-
-@keyframes pulse{
-0%{opacity:.5}
-50%{opacity:1}
-100%{opacity:.5}
-}
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle at 20% 20%,#00eaff22,transparent 40%),
-radial-gradient(circle at 80% 70%,#0077ff22,transparent 40%);
-animation:bgMove 18s linear infinite;
-z-index:-1;
-}
-
-@keyframes bgMove{
-0%{transform:translate(0,0)}
-50%{transform:translate(-10%,-10%)}
-100%{transform:translate(0,0)}
-}
-.spinner{
-width:40px;
-height:40px;
-border-radius:50%;
-border:4px solid rgba(255,255,255,.2);
-border-top:4px solid #00eaff;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
-  </style>
-
-  
-</head>
-<body>
-  <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -520,7 +150,7 @@ LOGIN
 
 /* ================= CONFIG ================= */
 
-const SERVER_URL="https://apikey-production-f6cd.up.railway.app";
+const SERVER_URL="https://apikey-production-8bb0.up.railway.app/";
 
 /* ================= DEVICE ID ================= */
 
@@ -534,68 +164,54 @@ return id;
 }
 
 /* ================= CHECK KEY ================= */
+async function checkKey(key, auto = false) {
+    const status = document.getElementById("status");
+    const loader = document.getElementById("loader");
+    const btn = document.getElementById("loginBtn");
 
-async function checkKey(key,auto=false){
+    if (!auto) {
+        loader.style.display = "block";
+        btn.disabled = true;
+    }
+    status.innerText = "Checking key...";
 
-const status=document.getElementById("status");
-const loader=document.getElementById("loader");
-const btn=document.getElementById("loginBtn");
+    try {
+        const res = await fetch(SERVER_URL + "checkKey", { // Đã sửa đường dẫn URL
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                key: key,
+                deviceId: deviceId
+            })
+        });
 
-loader.style.display="block";
-btn.disabled=true;
-status.innerText="Checking key...";
+        const data = await res.json();
 
-try{
+        loader.style.display = "none";
+        btn.disabled = false;
 
-const res=await fetch(SERVER_URL+"/checkKey",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-key:key,
-deviceId:deviceId
-})
-});
+        if (data.success) {
+            status.innerText = "✅ Login success";
+            localStorage.setItem("SYSTEMIOS_KEY", key);
 
-const data=await res.json();
+            /* LOAD MENU */
+            setTimeout(() => {
+                showMenu(data.daysLeft);
+                startGalaxy();
+            }, 700);
+        } else {
+            status.innerText = "❌ " + (data.message || "Key không hợp lệ");
+            localStorage.removeItem("SYSTEMIOS_KEY");
+        }
 
-loader.style.display="none";
-btn.disabled=false;
-
-if(data.success){
-
-status.innerText="✅ Login success";
-
-localStorage.setItem("SYSTEMIOS_KEY",key);
-
-/* LOAD MENU */
-setTimeout(()=>{
-showMenu(data.daysLeft);
-startGalaxy();
-document.getElementById("loader").style.display="none";
-},700);
-
-}else{
-
-status.innerText="❌ "+data.message;
-localStorage.removeItem("SYSTEMIOS_KEY");
-
-}
-
-}catch(e){
-
-loader.style.display="none";
-btn.disabled=false;
-status.innerText="❌ Server error";
-
-console.log(e);const daysLeft = Math.ceil((k.expire - Date.now()) / 86400000);
-
-res.json({
-  success:true,
-  daysLeft: daysLeft
-});
-}
+    } catch (e) {
+        console.error("Lỗi kết nối server:", e);
+        loader.style.display = "none";
+        btn.disabled = false;
+        status.innerText = "❌ Không thể kết nối đến Server";
+    }
 }
 
 /* ================= LOGIN CLICK ================= */
@@ -789,6 +405,16 @@ src="https://sf-static.upanhlaylink.com/img/image_20260315bfb9fa385a7398288bdc9b
 
 <div class="item">
 <div class="item-left">MAX PERFORMANCE</div>
+<div class="switch"></div>
+</div>
+
+<div class="item">
+<div class="item-left">BOOST Free Fire</div>
+<div class="switch"></div>
+</div>
+
+<div class="item">
+<div class="item-left">BOOST Free Fire Max</div>
 <div class="switch"></div>
 </div>
 
@@ -988,122 +614,5 @@ renderer.setSize(window.innerWidth,window.innerHeight);
 
 </script>
 
-</body>
-</html>
-
-  <script>
-    function showToast(text){
-
-let toast=document.createElement("div");
-
-toast.className="toast";
-toast.innerText=text;
-
-document.body.appendChild(toast);
-
-setTimeout(()=>{
-toast.remove();
-},2000);
-
-}
-
-
-setInterval(async()=>{
-
- let res=await fetch(SERVER_URL+"/checkKey",{
-   method:"POST",
-   headers:{'Content-Type':'application/json'},
-   body:JSON.stringify({
-     key:key,
-     deviceId:getDeviceID()
-   })
- });
-
- let data=await res.json();
-
- if(!data.success){
-
-   localStorage.removeItem("SYSTEMIOS_KEY");
-
-   showToast("⛔ Key expired");
-
-   setTimeout(()=>{
-     location.reload();
-   },1500);
- }
-
-},60000);function showToast(msg){
-
- const t=document.createElement("div");
-
- t.innerText=msg;
- t.style.cssText=`
- position:fixed;
- bottom:40px;
- left:50%;
- transform:translateX(-50%);
- background:rgba(30,30,30,.9);
- padding:12px 20px;
- border-radius:20px;
- color:white;
- z-index:99999;
- backdrop-filter:blur(10px);
- `;
-
- document.body.appendChild(t);
-
- setTimeout(()=>t.remove(),2000);
-}
-/* ===== FAKE OPTIMIZER CODE ===== */
-
-function runCode(type){
-
-const box = document.getElementById("codeBox");
-const text = document.getElementById("codeText");
-
-box.style.display="block";
-text.innerHTML="";
-
-let lines = [];
-
-if(type.includes("BOOST")){
-lines = [
-"> Initializing FPS Engine...",
-"> Unlocking GPU threads...",
-"> Clearing background apps...",
-"> Boosting render pipeline...",
-"> FPS Stable ✅"
-];
-}
-
-if(type.includes("OPTIMIZER")){
-lines = [
-"> Scanning CPU usage...",
-"> Cleaning RAM cache...",
-"> Optimizing GPU load...",
-"> Applying performance profile...",
-"> System Optimized ✅"
-];
-}
-
-let i=0;
-
-function typeLine(){
-if(i>=lines.length){
-setTimeout(()=>box.style.display="none",500);
-return;
-}
-
-text.innerHTML += lines[i]+"\n";
-text.scrollTop = text.scrollHeight;
-i++;
-
-setTimeout(typeLine,400);
-}
-
-typeLine();
-}
-
-  </script>
 </body>
 </html>
